@@ -1,0 +1,552 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>路由配置文件是如何使用的 · laravel portal</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="nuxseme">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6-Facade静态引用是如何实现的.html" />
+    
+    
+    <link rel="prev" href="4-app.php是如何加载的.html" />
+    
+
+    
+        <link rel="shortcut icon" href='assets/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='assets/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='assets/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"nuxseme","repo":"laravel-portal","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1-安装Homestead.html">
+            
+                <a href="1-安装Homestead.html">
+            
+                    
+                    安装Homestead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2-目录结构.html">
+            
+                <a href="2-目录结构.html">
+            
+                    
+                    目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3-生命周期.html">
+            
+                <a href="3-生命周期.html">
+            
+                    
+                    生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4-app.php是如何加载的.html">
+            
+                <a href="4-app.php是如何加载的.html">
+            
+                    
+                    app.php是如何加载的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="5-路由配置文件是如何使用的.html">
+            
+                <a href="5-路由配置文件是如何使用的.html">
+            
+                    
+                    路由配置文件是如何使用的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6-Facade静态引用是如何实现的.html">
+            
+                <a href="6-Facade静态引用是如何实现的.html">
+            
+                    
+                    Facade静态引用是如何实现的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="部署.html">
+            
+                <a href="部署.html">
+            
+                    
+                    部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="服务提供者.md">
+            
+                <span>
+            
+                    
+                    服务提供者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="路由.html">
+            
+                <a href="路由.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="认证.html">
+            
+                <a href="认证.html">
+            
+                    
+                    认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="容器.html">
+            
+                <a href="容器.html">
+            
+                    
+                    容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="中间件.md">
+            
+                <span>
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >路由配置文件是如何使用的</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x95EE;&#x9898;&#xFF1A;&#x8DEF;&#x7531;&#x6587;&#x4EF6;&#x5206;&#x4E3A;api.php  web.php&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x5339;&#x914D;&#x5230;web&#x6587;&#x4EF6;&#xFF0C;&#x5E26;&#x6709;/api/&#x7684;&#x5339;&#x914D;&#x7684;api&#x5B9A;&#x4E49;&#x7684;&#x8DEF;&#x7531;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;</p>
+<p>1  Kernel  bootstrap &#x9636;&#x6BB5; \Illuminate\Foundation\Bootstrap\RegisterProviders::class</p>
+<p>2  &#x5F15;&#x5165;app&#x6587;&#x4EF6;&#x7684;&#x670D;&#x52A1;&#x4F9B;&#x7ED9;&#x5668;  &#x9488;&#x5BF9;api.php&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x7531;&#x589E;&#x52A0;&#x4E86;&#x524D;&#x7F00;</p>
+<pre><code class="lang-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerConfiguredProviders</span><span class="hljs-params">()</span>
+    </span>{
+        $providers = Collection::make($this-&gt;config[<span class="hljs-string">&apos;app.providers&apos;</span>])
+                        -&gt;partition(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($provider)</span> </span>{
+                            <span class="hljs-keyword">return</span> strpos($provider, <span class="hljs-string">&apos;Illuminate\\&apos;</span>) === <span class="hljs-number">0</span>;
+                        });
+
+        $providers-&gt;splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, [$this-&gt;make(PackageManifest::class)-&gt;providers()]);
+
+        (<span class="hljs-keyword">new</span> ProviderRepository($this, <span class="hljs-keyword">new</span> Filesystem, $this-&gt;getCachedServicesPath()))
+                    -&gt;load($providers-&gt;collapse()-&gt;toArray());
+    }
+</code></pre>
+<p>3 RouteServiceProvider  </p>
+<pre><code class="lang-php"> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">()</span>
+    </span>{
+        $this-&gt;mapApiRoutes();
+
+        $this-&gt;mapWebRoutes();
+
+        <span class="hljs-comment">//</span>
+    }
+
+     */
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapWebRoutes</span><span class="hljs-params">()</span>
+    </span>{
+        Route::middleware(<span class="hljs-string">&apos;web&apos;</span>)
+            -&gt;namespace($this-&gt;namespace)
+            -&gt;group(base_path(<span class="hljs-string">&apos;routes/web.php&apos;</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Define the &quot;api&quot; routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapApiRoutes</span><span class="hljs-params">()</span>
+    </span>{
+        Route::prefix(<span class="hljs-string">&apos;api&apos;</span>)
+            -&gt;middleware(<span class="hljs-string">&apos;api&apos;</span>)
+            -&gt;namespace($this-&gt;namespace)
+            -&gt;group(base_path(<span class="hljs-string">&apos;routes/api.php&apos;</span>));
+    }
+</code></pre>
+<p> Route &#x6839;&#x636E;Facade&#x83B7;&#x53D6;&#x5230;&#x7684;&#x662F;$app&#x4E0B;&#x7684;router &#x5B9E;&#x4F8B;</p>
+<p>&#x8FD9;&#x91CC;&#x5C06;api.php web.php&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x4FDD;&#x5B58;&#x5230;router&#x91CC;&#x9762; </p>
+<p>4 kernel &#x5728;&#x4E2D;&#x95F4;&#x4EF6;&#x5904;&#x7406;&#x5B8C;&#x4E4B;&#x540E;&#x8C03;&#x7528;router&#x89E3;&#x6790;&#x8FD4;&#x56DE;&#x9002;&#x914D;&#x7684;&#x8DEF;&#x7531;</p>
+<pre><code class="lang-php"> <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dispatchToRouter</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($request)</span> </span>{
+            $this-&gt;app-&gt;instance(<span class="hljs-string">&apos;request&apos;</span>, $request);
+
+            <span class="hljs-keyword">return</span> $this-&gt;router-&gt;dispatch($request);
+        };
+    }
+   <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x901A;&#x8FC7;router&#x89E3;&#x6790;&#x4E86;&#x8DEF;&#x7531;&#xFF0C;&#x62FF;&#x5230;request&#x548C;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#xFF0C;&#x89E3;&#x6790;&#xFF0C;&#x9002;&#x914D;&#x8FD4;&#x56DE;&#x6700;&#x7EC8;&#x5339;&#x914D;&#x7684;&#x8DEF;&#x7531;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4-app.php是如何加载的.html" class="navigation navigation-prev " aria-label="Previous page: app.php是如何加载的">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6-Facade静态引用是如何实现的.html" class="navigation navigation-next " aria-label="Next page: Facade静态引用是如何实现的">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"路由配置文件是如何使用的","level":"1.6","depth":1,"next":{"title":"Facade静态引用是如何实现的","level":"1.7","depth":1,"path":"6-Facade静态引用是如何实现的.md","ref":"6-Facade静态引用是如何实现的.md","articles":[]},"previous":{"title":"app.php是如何加载的","level":"1.5","depth":1,"path":"4-app.php是如何加载的.md","ref":"4-app.php是如何加载的.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","-toggle-chapters","chapter-fold","expandable-chapters","-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon","copy-code-button"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/nuxseme/laravel-portal"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"night","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.png","180x180":"assets/favicon.png"}},"github-buttons":{"buttons":[{"user":"nuxseme","repo":"laravel-portal","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"nuxseme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":"-","disableTitleFormatting":false,"variables":{},"title":"laravel portal","language":"zh-hans","catalog":"all","links":{"Github":{"Github":"https://github.com/nuxseme/laravel-portal"}},"gitbook":"3.2.3","unchanged":[],"description":"laravel portal","outputfile":"SUMMARY.md"},"file":{"path":"5-路由配置文件是如何使用的.md","mtime":"2020-08-06T08:04:28.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-06T08:05:34.986Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
